@@ -1,0 +1,25 @@
+Practical Definition:
+
+Need to create only backend APIs as below;
+
+1.
+API to Allot a phone number.
+The phone numbers will start from 111-111-1111 and end at 999-999-9999.
+It allots one of the available numbers to the user.
+
+POST /phones # Allots a number. Eg: {phone: 1234567890}
+
+2.
+If users may want fancy numbers,
+they can specifically ask for a number to be allotted to them.
+if the requested number is available then the system allots it to them,
+otherwise, the system allots any available number.
+The system need not have to know which number is allotted to which user.
+The same user may make successive requests and get multiple phone numbers for himself,
+but the system is not bothered.
+At any point of time, the system only knows which phone numbers are allotted and
+which phone numbers are free.
+POST /phones/1111111111 # Allots the number 1111111111. Eg: {phone:1111111111}
+
+
+3. GET /phones # Lists all allotted numbers. Eg: {phones: [1234567890, 1111111111]}
